@@ -8,7 +8,7 @@ const resetButton = document.getElementById('reset'); // リセットボタン�
 const setButton = document.getElementById('set'); // セットボタンの要素
 const result = document.getElementById('result'); // 結果表示の要素
 const targetElem = document.getElementById('target'); // 目標タイム表示の要素
-
+const rankElem = document.getElementById('rank'); // ランク表示の要素
 
 
 // 開始時間
@@ -97,8 +97,27 @@ stopButton.addEventListener('click', function() {
   const resultTime = targetTime - (currentTime.getSeconds() + (currentTime.getMilliseconds() / 1000));
   // 桁を絞った数字を変数に入れる（resultTimeFloor）
   const resultTimeFloor = Math.floor(resultTime * 1000) / 1000;
-  // プラスマイナスを入れ替えて表示する
-  result.textContent = resultTimeFloor * -1;
+  // プラス表示のみにする
+  result.textContent = Math.abs(resultTimeFloor);
+
+const resultSec = Math.abs(resultTimeFloor);
+result.textContent = resultSec;
+
+  let rank = '';
+  if (resultSec <= 0.3) {
+    rank = 's';
+  } else if (resultSec <= 0.8){
+      rank = 'a';
+  } else if (resultSec <= 1) {
+      rank = 'b';
+  }    else {
+      rank= 'c';
+      
+  }
+
+  rankElem.textContent = rank;
+
+
 });
 
 // リセットボタンがクリックされたら時間を0に戻す
