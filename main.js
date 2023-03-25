@@ -17,7 +17,6 @@ let startTime;
 let stopTime = 0;
 // タイムアウトID
 let timeoutID;
-
 // 現在時間の情報
 let currentTime;
 
@@ -35,6 +34,7 @@ targetTime = randomNum2;
 targetElem.textContent = targetTime;
 
 
+// セットボタンがクリックされたら
 setButton.addEventListener('click', () => {
   const randomNum = Math.random();
   const randomNum2 = (Math.floor(randomNum * (maxTime + 1 - minTime) * 10) / 10) + minTime;
@@ -43,27 +43,11 @@ setButton.addEventListener('click', () => {
 });
 
 
-
-
-
-
-
 // 時間を表示する関数
 function displayTime() {
   currentTime = new Date(Date.now() - startTime + stopTime);
   const s = String(currentTime.getSeconds()).padStart(2, '0');
   const ms = String(currentTime.getMilliseconds()).padStart(3, '0');
-  
-  // console.log(currentTime.getSeconds());
-  // console.log(currentTime.getMilliseconds());
-  // console.log(currentTime.getSeconds() + (currentTime.getMilliseconds() / 1000));
-  
-  
-  // console.log(startTime);
-  // console.log(stopTime);
-  // console.log(currentTime);
-  
-  
   time.textContent = `${s}.${ms}`;
   timeoutID = setTimeout(displayTime, 10);
 }
@@ -75,9 +59,7 @@ startButton.addEventListener('click', () => {
   resetButton.disabled = true;
   startTime = Date.now();
   displayTime();
-  // time.classList.add('hide');
-
-
+  time.classList.add('hide');
 });
 
 // ストップボタンがクリックされたら時間を止める
@@ -87,8 +69,7 @@ stopButton.addEventListener('click', function() {
   resetButton.disabled = false;
   clearTimeout(timeoutID);
   stopTime += (Date.now() - startTime);
-  // time.classList.remove('hide');
-  // console.log(stopTime);
+  time.classList.remove('hide');
   console.log(currentTime);
   console.log(currentTime.getSeconds() + (currentTime.getMilliseconds() / 1000));
   console.log(targetTime - (currentTime.getSeconds() + (currentTime.getMilliseconds() / 1000)));
@@ -100,23 +81,23 @@ stopButton.addEventListener('click', function() {
   // プラス表示のみにする
   result.textContent = Math.abs(resultTimeFloor);
 
-const resultSec = Math.abs(resultTimeFloor);
-result.textContent = resultSec;
+  // 結果の秒数を表示する
+  const resultSec = Math.abs(resultTimeFloor);
+  result.textContent = resultSec;
 
+  // 結果を元にランクを判定して変数に格納
   let rank = '';
   if (resultSec <= 0.3) {
     rank = 's';
   } else if (resultSec <= 0.8){
-      rank = 'a';
+    rank = 'a';
   } else if (resultSec <= 1) {
-      rank = 'b';
-  }    else {
-      rank= 'c';
-      
+    rank = 'b';
+  } else {
+    rank= 'c';
   }
-
+  // ランクを表示する
   rankElem.textContent = rank;
-
 
 });
 
@@ -129,10 +110,3 @@ resetButton.addEventListener('click', function() {
   stopTime = 0;
 });
 
-
-const num = 5.339;              // 5.339 →  5.33
-const num2 = num * 100;         // 533.9
-const num3 = Math.floor(num2);  // 533
-const num4 = num3 / 100;        // 5.33
-
-console.log(Math.floor(5.339 * 100) / 100);
