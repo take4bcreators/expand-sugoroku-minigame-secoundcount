@@ -2,10 +2,10 @@
 
 // HTMLの要素を取得して変数に入れる
 const time = document.getElementById('time'); // 時間表示の要素
+const tapButton = document.getElementById('tap'); // タップしてはじめるの要素
 const startButton = document.getElementById('start'); // スタートボタンの要素
 const stopButton = document.getElementById('stop'); // ストップボタンの要素
-const resetButton = document.getElementById('reset'); // リセットボタンの要素
-const setButton = document.getElementById('set'); // セットボタンの要素
+const sugorokuBotton = document.getElementById('sugoroku'); // すごろくにもどるの要素
 const result = document.getElementById('result'); // 結果表示の要素
 const targetElem = document.getElementById('target'); // 目標タイム表示の要素
 const rankElem = document.getElementById('rank'); // ランク表示の要素
@@ -34,15 +34,6 @@ targetTime = randomNum2;
 targetElem.textContent = targetTime;
 
 
-// セットボタンがクリックされたら
-setButton.addEventListener('click', () => {
-  const randomNum = Math.random();
-  const randomNum2 = (Math.floor(randomNum * (maxTime + 1 - minTime) * 10) / 10) + minTime;
-  targetTime = randomNum2;
-  targetElem.textContent = targetTime;
-});
-
-
 // 時間を表示する関数
 function displayTime() {
   currentTime = new Date(Date.now() - startTime + stopTime);
@@ -56,7 +47,7 @@ function displayTime() {
 startButton.addEventListener('click', () => {
   startButton.disabled = true;
   stopButton.disabled = false;
-  resetButton.disabled = true;
+  // resetButton.disabled = true;
   startTime = Date.now();
   displayTime();
   time.classList.add('hide');
@@ -66,7 +57,7 @@ startButton.addEventListener('click', () => {
 stopButton.addEventListener('click', function() {
   startButton.disabled = false;
   stopButton.disabled = true;
-  resetButton.disabled = false;
+  // resetButton.disabled = false;
   clearTimeout(timeoutID);
   stopTime += (Date.now() - startTime);
   time.classList.remove('hide');
@@ -102,11 +93,11 @@ stopButton.addEventListener('click', function() {
 });
 
 // リセットボタンがクリックされたら時間を0に戻す
-resetButton.addEventListener('click', function() {
-  startButton.disabled = false;
-  stopButton.disabled = true;
-  resetButton.disabled = true;
-  time.textContent = '00.000';
-  stopTime = 0;
-});
+// resetButton.addEventListener('click', function() {
+//   startButton.disabled = false;
+//   stopButton.disabled = true;
+//   resetButton.disabled = true;
+//   time.textContent = '00.000';
+//   stopTime = 0;
+// });
 

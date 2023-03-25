@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset='utf-8'>
-<title>Stopwatch</title>
-<!-- <link rel='stylesheet' type='text/css' href='style.css'> -->
+  <meta charset='utf-8'>
+  
+  <!-- ページタイトルの指定 -->
+  <title>Stopwatch</title>
+
+  <!-- ここにリセットCSSを入れる -->
+  
+
+  <!-- CSSの読み込み -->
+  <link rel='stylesheet' href='style.css'>
+  <!-- JSの読み込み -->
+  <script defer src='main.js'></script>
 </head>
 <body>
   <h1>秒数カウント</h1>
   <div id="container">
     <!-- 時間を表示する場所 -->
-    <div id="time" class="dummy1 dummy2">00.000</div>
+    <div id="time" class="">00.000</div>
     
     <!-- 目標タイムを表示する場所 -->
     <div id="target"></div>
@@ -22,13 +31,13 @@
     
     <!-- ボタン郡 -->
     <div id="buttons">
-      <input id="start" type="button" value="start">
-      <input id="stop" type="button" value="stop">
-      <input id="reset" type="button" value="reset">
-      <input id="set" type="button" value="set">
+      <div id="tap">タップしてはじめる</div>
+      <div id="start">start</div>
+      <div id="stop">stop</div>
+      <div id="sugoroku">すごろくにもどる</div>
+      
     </div>
-  </div>  
-  <script src='main.js'></script>
+  </div>
 </body>
 </html>
 
