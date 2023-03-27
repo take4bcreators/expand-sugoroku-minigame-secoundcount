@@ -1,43 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
-  
-  <!-- ページタイトルの指定 -->
-  <title>Stopwatch</title>
-
-  <!-- ここにリセットCSSを入れる -->
-  
-
-  <!-- CSSの読み込み -->
-  <link rel='stylesheet' href='style.css'>
-  <!-- JSの読み込み -->
-  <script defer src='main.js'></script>
+    <meta charset='utf-8'>
+    
+    <!-- ページタイトルの指定 -->
+    <title>Stopwatch</title>
+    
+    <!-- ここにリセットCSSを入れる -->
+    <link rel="stylesheet" href="ress.css" />
+    
+    <!-- CSSの読み込み -->
+    <link rel='stylesheet' href='style.css'>
+    <!-- JSの読み込み -->
+    <script defer src='main.js'></script>
 </head>
 <body>
-  <h1>秒数カウント</h1>
-  <div id="container">
-    <!-- 時間を表示する場所 -->
-    <div id="time" class="">00.000</div>
-    
-    <!-- 目標タイムを表示する場所 -->
-    <div id="target"></div>
-    
-    <!-- 結果を表示する場所 -->
-    <div id="result"></div>
-
-    <!-- ランクを表示する場所 -->
-    <div id="rank"></div>
-    
-    <!-- ボタン郡 -->
-    <div id="buttons">
-      <div id="tap">タップしてはじめる</div>
-      <div id="start">start</div>
-      <div id="stop">stop</div>
-      <div id="sugoroku">すごろくにもどる</div>
-      
+    <h1>秒数カウント</h1>
+    <div id="container">
+        <!-- 時間を表示する場所 -->
+        <div id="time" class="">00.000</div>
+        
+        <!-- 目標タイムを表示する場所 -->
+        <div id="target"></div>
+        
+        <!-- 結果を表示する場所 -->
+        <div id="result"></div>
+        
+        <!-- ランクを表示する場所 -->
+        <div id="rank"></div>
+        
+        <!-- ボタン郡 -->
+        <div id="buttons">
+            <div id="tap">タップしてはじめる</div>
+            <div id="start" class="hide">START</div>
+            <div id="stop" class="hide">STOP</div>
+            <div id="sugoroku" class="hide">もう1回はじめる</div>
+        </div>
     </div>
-  </div>
 </body>
 </html>
-

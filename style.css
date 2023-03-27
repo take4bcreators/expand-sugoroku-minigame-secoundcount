@@ -1,6 +1,8 @@
 
 
+/* 要素を隠すためのスタイル指定 */
 .hide {
-  visibility: hidden;
+    /* visibility: hidden; */
+    display: none;
 }
 
