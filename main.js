@@ -6,8 +6,8 @@ const tapButton = document.getElementById('tap'); // タップしてはじめる
 const startButton = document.getElementById('start'); // スタートボタンの要素
 const stopButton = document.getElementById('stop'); // ストップボタンの要素
 const sugorokuBotton = document.getElementById('sugoroku'); // すごろくにもどるの要素
-const result = document.getElementById('result'); // 結果表示の要素
 const targetElem = document.getElementById('target'); // 目標タイム表示の要素
+const result = document.getElementById('result'); // 結果表示の要素
 const rankElem = document.getElementById('rank'); // ランク表示の要素
 
 
@@ -55,8 +55,6 @@ tapButton.addEventListener('click', () => {
 
 
 
-
-
 // 0 〜 1未満のランダムな数字を生成
 const randomNum = Math.random();
 const randomNum2 = (Math.floor(randomNum * (maxTime + 1 - minTime) * 10) / 10) + minTime;
@@ -73,7 +71,6 @@ function displayTime() {
     timeElem.textContent = `${s}.${ms}`;
     timeoutID = setTimeout(displayTime, 10);
 }
-
 
 
 // スタートボタンがクリックされたら時間を進める
@@ -134,6 +131,11 @@ stopButton.addEventListener('click', () => {
     }
     // ランクを表示する
     rankElem.textContent = rank;
+
+    // 結果表示の要素を表示
+    result.classList.remove('hide');
+    // ランク表示の要素を表示
+    rankElem.classList.remove('hide');
 });
 
 
@@ -146,5 +148,26 @@ sugorokuBotton.addEventListener('click', () => {
     
     // スタートボタンを表示する
     startButton.classList.remove('hide');
+
+//「すごろくに戻る／もう1回はじめる」がクリックされたら時間を0に戻す
+// resetButton.addEventListener('click', function() {
+    // startButton.disabled = false;
+    // stopButton.disabled = true;
+    // resetButton.disabled = true;
+    time.textContent = '00.000';
+    // stopTime = 0;
+
+    // 0 〜 1未満のランダムな数字を生成
+    const randomNum = Math.random();
+    const randomNum2 = (Math.floor(randomNum * (maxTime + 1 - minTime) * 10) / 10) + minTime;
+    targetTime = randomNum2;
+    targetElem.textContent = targetTime;
+
+    // 結果表示の要素を非表示
+    result.classList.add('hide');
+    // ランク表示の要素を非表示
+    rankElem.classList.add('hide');
+
+    
 });
 
