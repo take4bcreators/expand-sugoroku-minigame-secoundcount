@@ -9,6 +9,7 @@ const sugorokuBotton = document.getElementById('sugoroku'); // すごろくに�
 const targetElem = document.getElementById('target'); // 目標タイム表示の要素
 const result = document.getElementById('result'); // 結果表示の要素
 const rankElem = document.getElementById('rank'); // ランク表示の要素
+const rankListElem = document.getElementById('ranklist'); // ランク一覧の要素
 
 
 // 開始時間
@@ -51,6 +52,9 @@ tapButton.addEventListener('click', () => {
     // 「タップして始める」ボタンを非表示にする
     //  → 「hide」クラスをつける
     tapButton.classList.add('hide');
+    
+    // 「時間表示」の要素を表示する
+    timeElem.classList.remove('hide');
 });
 
 
@@ -59,8 +63,7 @@ tapButton.addEventListener('click', () => {
 const randomNum = Math.random();
 const randomNum2 = (Math.floor(randomNum * (maxTime + 1 - minTime) * 10) / 10) + minTime;
 targetTime = randomNum2;
-targetElem.textContent = targetTime;
-
+targetElem.textContent = targetTime + '秒でとめろ！';
 
 // 時間を表示する関数
 function displayTime() {
@@ -104,9 +107,6 @@ stopButton.addEventListener('click', () => {
     // 「ストップ」ボタンを非表示にする
     stopButton.classList.add('hide');
     
-    // 「すごろくにもどる」ボタンを表示する
-    sugorokuBotton.classList.remove('hide');
-    
     // 目標タイムとの差の時間
     const resultTime = targetTime - (currentTime.getSeconds() + (currentTime.getMilliseconds() / 1000));
     // 桁を絞った数字を変数に入れる（resultTimeFloor）
@@ -122,20 +122,37 @@ stopButton.addEventListener('click', () => {
     let rank = '';
     if (resultSec <= 0.3) {
         rank = 's';
-    } else if (resultSec <= 0.8){
+    } else if (resultSec <= 0.5){
         rank = 'a';
-    } else if (resultSec <= 1) {
+    } else if (resultSec <= 0.8) {
         rank = 'b';
     } else {
-        rank= 'c';
+        rank = 'c';
     }
     // ランクを表示する
-    rankElem.textContent = rank;
+    rankElem.textContent = 'ランク' + rank.toUpperCase();
 
     // 結果表示の要素を表示
     result.classList.remove('hide');
-    // ランク表示の要素を表示
-    rankElem.classList.remove('hide');
+    // ランク表示の要素を非表示
+    rankElem.classList.add('hide');
+    
+    
+    // setTimeout(時間が経ったあとにやる処理, 時間ミリ秒);
+    setTimeout(() => {
+        // タイトルを消す
+        targetElem.classList.add('hide');
+        // 秒数表示を消す
+        timeElem.classList.add('hide');
+        // 結果秒数を消す
+        result.classList.add('hide');
+        // ランク一覧を表示する
+        rankListElem.classList.remove('hide');
+        // ランクを表示する
+        rankElem.classList.remove('hide');
+        // もう1回ボタンを表示する
+        sugorokuBotton.classList.remove('hide');
+    }, 3000);
 });
 
 
@@ -148,26 +165,29 @@ sugorokuBotton.addEventListener('click', () => {
     
     // スタートボタンを表示する
     startButton.classList.remove('hide');
-
-//「すごろくに戻る／もう1回はじめる」がクリックされたら時間を0に戻す
-// resetButton.addEventListener('click', function() {
-    // startButton.disabled = false;
-    // stopButton.disabled = true;
-    // resetButton.disabled = true;
+    
     time.textContent = '00.000';
-    // stopTime = 0;
 
     // 0 〜 1未満のランダムな数字を生成
     const randomNum = Math.random();
     const randomNum2 = (Math.floor(randomNum * (maxTime + 1 - minTime) * 10) / 10) + minTime;
     targetTime = randomNum2;
-    targetElem.textContent = targetTime;
-
+    targetElem.textContent = targetTime + '秒でとめろ！';
+    
     // 結果表示の要素を非表示
     result.classList.add('hide');
+    
     // ランク表示の要素を非表示
     rankElem.classList.add('hide');
-
+    
+    // ランクリストを非表示
+    rankListElem.classList.add('hide');
+    
+    // タイトルを表示
+    targetElem.classList.remove('hide');
+    
+    // 秒数表示を表示
+    timeElem.classList.remove('hide');
     
 });
 
