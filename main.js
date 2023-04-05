@@ -152,7 +152,7 @@ stopButton.addEventListener('click', () => {
         rankElem.classList.remove('hide');
         // もう1回ボタンを表示する
         sugorokuBotton.classList.remove('hide');
-    }, 3000);
+    }, 2500);
 });
 
 
