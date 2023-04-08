@@ -8,8 +8,9 @@
 
 /* 目標タイム兼タイトルのスタイル指定 */
 #target{
-    margin: 3rem;
     text-align: center;
+    height:70px;
+    line-height:70px;
     color: #F7B71D;
     font-size: 100px;
     font-family: 'Sawarabi Gothic';
@@ -17,7 +18,13 @@
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
                  0px 3px 0 #1F1E1E,0px -3px 0 #1F1E1E,
                  -3px 0 0 #1F1E1E,3px 0 0 #1F1E1E;
-    }
+
+/* 目標タイム兼タイトルを中央に配置 */
+    /* position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
 
     /* 時間を表示する要素のスタイル指定 */
 #time{
@@ -36,7 +43,7 @@
     text-align: center;
     color: #FF069C;
     font-family: 'Sawarabi Gothic';
-    font-size: 100px;
+    font-size: 70px;
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
                  0px 3px 0 #1F1E1E,0px -3px 0 #1F1E1E,
@@ -45,6 +52,7 @@
 
 /* ランク一覧のスタイル指定 */
 #ranklist{
+    margin: 2rem;
     text-align: center;
     color: #F7B71D;
     font-size: 40px;
@@ -78,3 +86,21 @@
                  0px 2px 0 #1F1E1E,0px -2px 0 #1F1E1E,
                  -2px 0 0 #1F1E1E,2px 0 0 #1F1E1E;
 }
+
+/* タップして始めるを中央下に配置 */
+#tap{
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+/* ストップボタンを中央下に配置 */
+#stop{
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+/* ランク一覧に点々がついてる、背景について、目標兼タイトルの配置（ほかの位置もずれる）*/
