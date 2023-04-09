@@ -6,7 +6,8 @@ const tapButton = document.getElementById('tap'); // タップしてはじめる
 const startButton = document.getElementById('start'); // スタートボタンの要素
 const stopButton = document.getElementById('stop'); // ストップボタンの要素
 const sugorokuBotton = document.getElementById('sugoroku'); // すごろくにもどるの要素
-const targetElem = document.getElementById('target'); // 目標タイム表示の要素
+const titleElem = document.getElementById('title'); // 目標タイム兼タイトル（大）の要素
+const targetElem = document.getElementById('target'); // 目標タイム兼タイトル（小）の要素
 const result = document.getElementById('result'); // 結果表示の要素
 const rankElem = document.getElementById('rank'); // ランク表示の要素
 const rankListElem = document.getElementById('ranklist'); // ランク一覧の要素
@@ -23,8 +24,6 @@ let targetTime = 1;
 const minTime = 5;    // 出る数字の最小値
 const maxTime = 15;   // 出る数字の最大値
 const digitNum = 10;
-
-
 
 
 // 
@@ -55,6 +54,13 @@ tapButton.addEventListener('click', () => {
     
     // 「時間表示」の要素を表示する
     timeElem.classList.remove('hide');
+
+    // 目標兼タイトル（大）を非表示にする
+    titleElem.classList.add('hide');
+
+    // 目標兼タイトル（小）を表示する
+    targetElem.classList.remove('hide');
+
 });
 
 
@@ -63,6 +69,7 @@ tapButton.addEventListener('click', () => {
 const randomNum = Math.random();
 const randomNum2 = (Math.floor(randomNum * (maxTime + 1 - minTime) * 10) / 10) + minTime;
 targetTime = randomNum2;
+titleElem.textContent = targetTime + '秒でとめろ！';
 targetElem.textContent = targetTime + '秒でとめろ！';
 
 // 時間を表示する関数
@@ -140,7 +147,9 @@ stopButton.addEventListener('click', () => {
     
     // setTimeout(時間が経ったあとにやる処理, 時間ミリ秒);
     setTimeout(() => {
-        // タイトルを消す
+        // タイトル(大)を消す
+        titleElem.classList.add('hide');
+        // タイトル（小）を消す
         targetElem.classList.add('hide');
         // 秒数表示を消す
         timeElem.classList.add('hide');
@@ -160,6 +169,7 @@ stopButton.addEventListener('click', () => {
 
 // 「すごろくに戻る／もう1回はじめる」ボタンが押されたとき
 sugorokuBotton.addEventListener('click', () => {
+
     // 「すごろくに戻る／もう1回はじめる」ボタンを非表示にする
     sugorokuBotton.classList.add('hide');
     
@@ -172,8 +182,9 @@ sugorokuBotton.addEventListener('click', () => {
     const randomNum = Math.random();
     const randomNum2 = (Math.floor(randomNum * (maxTime + 1 - minTime) * 10) / 10) + minTime;
     targetTime = randomNum2;
+    titleElem.textContent = targetTime + '秒でとめろ！';
     targetElem.textContent = targetTime + '秒でとめろ！';
-    
+
     // 結果表示の要素を非表示
     result.classList.add('hide');
     
@@ -184,10 +195,19 @@ sugorokuBotton.addEventListener('click', () => {
     rankListElem.classList.add('hide');
     
     // タイトルを表示
-    targetElem.classList.remove('hide');
+    titleElem.classList.remove('hide');
     
     // 秒数表示を表示
     timeElem.classList.remove('hide');
+
+     // タイトル（大）を非表示
+     titleElem.classList.add('hide');
+
+     // タイトル（小）を表示
+     targetElem.classList.remove('hide');
     
 });
 
+$(".frame").on("click", function () {
+    $(this).toggleClass("change");
+  });
