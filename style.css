@@ -13,7 +13,7 @@ body {
 } 
 
 /* 目標タイム兼タイトル（大）のスタイル指定 */
-#title{
+.title{
     text-align: center;
     height:70px;
     line-height:70px;
@@ -26,8 +26,12 @@ body {
                  -3px 0 0 #1F1E1E,3px 0 0 #1F1E1E;
 }
 
+
+
+
+
 /* 目標タイム兼タイトルをど真ん中に持ってくる */
-#container {
+.container {
     /* 要素の大きさを画面いっぱいに広げる */
     /* vh・vw の参考：https://jajaaan.co.jp/web-production/frontend/css-vw-vh-vmin-vmax/ */
     height: 100vh;
@@ -41,7 +45,7 @@ body {
 }
 
 /* 目標タイム兼タイトル（小） */
-#target{
+.target{
     text-align: center;
     color: #F7B71D;
     font-size: 50px;
@@ -58,7 +62,7 @@ body {
 }
 
     /* 時間を表示する要素のスタイル指定 */
-#time{
+.time{
     text-align: center;
     color: #FF069C;
     font-family: 'Sawarabi Gothic';
@@ -75,7 +79,7 @@ body {
 }
 
 /* 結果表示のスタイル指定 */
-#result{
+.result{
     text-align: center;
     color: #FF069C;
     font-family: 'Sawarabi Gothic';
@@ -92,7 +96,7 @@ body {
 }
 
 /* ランク一覧のスタイル指定 */
-#ranklist{
+.ranklist{
     margin: 1rem;
     text-align: center;
     color: #F7B71D;
@@ -110,7 +114,7 @@ body {
 }
 
 /* ランク表示のスタイル指定 */
-#rank{
+.rank{
     text-align: center;
     color: #FF069C;
     font-family: 'Sawarabi Gothic';
@@ -127,7 +131,7 @@ body {
 }
 
 /* ボタン群のスタイル指定 */
-#buttons{
+.buttons{
     text-align: center;
     color: #F7B71D;
     font-size: 40px;

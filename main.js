@@ -208,6 +208,3 @@ sugorokuBotton.addEventListener('click', () => {
     
 });
 
-$(".frame").on("click", function () {
-    $(this).toggleClass("change");
-  });
