@@ -11,6 +11,8 @@ const targetElem = document.getElementById('target'); // 目標タイム兼タ�
 const result = document.getElementById('result'); // 結果表示の要素
 const rankElem = document.getElementById('rank'); // ランク表示の要素
 const rankListElem = document.getElementById('ranklist'); // ランク一覧の要素
+const bodyElem = document.querySelector('body');
+
 
 
 // 開始時間
@@ -61,6 +63,8 @@ tapButton.addEventListener('click', () => {
     // 目標兼タイトル（小）を表示する
     targetElem.classList.remove('hide');
 
+    // 背景を変える
+    bodyElem.classList.add('start');
 });
 
 
@@ -156,11 +160,13 @@ stopButton.addEventListener('click', () => {
         // 結果秒数を消す
         result.classList.add('hide');
         // ランク一覧を表示する
-        rankListElem.classList.remove('hide');
+        // rankListElem.classList.remove('hide');
         // ランクを表示する
         rankElem.classList.remove('hide');
         // もう1回ボタンを表示する
         sugorokuBotton.classList.remove('hide');
+        // 背景を変える
+        bodyElem.classList.remove('start');
     }, 2500);
 });
 
@@ -192,7 +198,7 @@ sugorokuBotton.addEventListener('click', () => {
     rankElem.classList.add('hide');
     
     // ランクリストを非表示
-    rankListElem.classList.add('hide');
+    // rankListElem.classList.add('hide');
     
     // タイトルを表示
     titleElem.classList.remove('hide');

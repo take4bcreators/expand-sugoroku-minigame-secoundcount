@@ -8,9 +8,20 @@
 
 body {
 /* 背景を指定する */
-    background-image: url("./img/image2.svg"),url("./img/image1.svg");
-    background-size: cover;
-} 
+    background-image: url("./img/image2.svg"), url("./img/image1.svg");
+    background-size: 100vw 100vh, 100vw 100vh;
+    
+    font-family: 'Sawarabi Gothic', sans-serif;
+    
+    height: 100vh;
+    width: 100vw;
+}
+
+body.start {
+    background-image: url("./img/manga1.jpg");
+}
+
+
 
 /* 目標タイム兼タイトル（大）のスタイル指定 */
 .title{
@@ -19,7 +30,6 @@ body {
     line-height:70px;
     color: #F7B71D;
     font-size: 100px;
-    font-family: 'Sawarabi Gothic';
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
                  0px 3px 0 #1F1E1E,0px -3px 0 #1F1E1E,
@@ -49,7 +59,6 @@ body {
     text-align: center;
     color: #F7B71D;
     font-size: 50px;
-    font-family: 'Sawarabi Gothic';
     text-shadow: 2px 2px 0 #1F1E1E,-2px -2px 0 #1F1E1E,
                  -2px 2px 0 #1F1E1E,2px -2px 0 #1F1E1E,
                  0px 2px 0 #1F1E1E,0px -2px 0 #1F1E1E,
@@ -65,7 +74,6 @@ body {
 .time{
     text-align: center;
     color: #FF069C;
-    font-family: 'Sawarabi Gothic';
     font-size: 150px;
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
@@ -82,7 +90,6 @@ body {
 .result{
     text-align: center;
     color: #FF069C;
-    font-family: 'Sawarabi Gothic';
     font-size: 100px;
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
@@ -101,7 +108,6 @@ body {
     text-align: center;
     color: #F7B71D;
     font-size: 40px;
-    font-family: 'Sawarabi Gothic';
     text-shadow: 2px 2px 0 #1F1E1E,-2px -2px 0 #1F1E1E,
                  -2px 2px 0 #1F1E1E,2px -2px 0 #1F1E1E,
                  0px 2px 0 #1F1E1E,0px -2px 0 #1F1E1E,
@@ -117,7 +123,6 @@ body {
 .rank{
     text-align: center;
     color: #FF069C;
-    font-family: 'Sawarabi Gothic';
     font-size: 150px;
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
@@ -125,7 +130,7 @@ body {
                  -3px 0 0 #1F1E1E,3px 0 0 #1F1E1E;
     /* 配置 */
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -135,7 +140,6 @@ body {
     text-align: center;
     color: #F7B71D;
     font-size: 40px;
-    font-family: 'Sawarabi Gothic';
     text-shadow: 2px 2px 0 #1F1E1E,-2px -2px 0 #1F1E1E,
                  -2px 2px 0 #1F1E1E,2px -2px 0 #1F1E1E,
                  0px 2px 0 #1F1E1E,0px -2px 0 #1F1E1E,
