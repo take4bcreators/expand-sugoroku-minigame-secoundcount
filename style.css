@@ -17,10 +17,10 @@ body {
     width: 100vw;
 }
 
+/* 背景切り替え後 */
 body.start {
-    background-image: url("./img/manga1.jpg");
+    background-image:url("./img/image2.svg"), url("./img/manga1.jpg");
 }
-
 
 
 /* 目標タイム兼タイトル（大）のスタイル指定 */
@@ -28,7 +28,7 @@ body.start {
     text-align: center;
     height:70px;
     line-height:70px;
-    color: #F7B71D;
+    color: #FDCD01;
     font-size: 100px;
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
@@ -57,7 +57,7 @@ body.start {
 /* 目標タイム兼タイトル（小） */
 .target{
     text-align: center;
-    color: #F7B71D;
+    color: #FDCD01;
     font-size: 50px;
     text-shadow: 2px 2px 0 #1F1E1E,-2px -2px 0 #1F1E1E,
                  -2px 2px 0 #1F1E1E,2px -2px 0 #1F1E1E,
@@ -73,7 +73,7 @@ body.start {
     /* 時間を表示する要素のスタイル指定 */
 .time{
     text-align: center;
-    color: #FF069C;
+    color: #F10A70;
     font-size: 150px;
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
@@ -89,7 +89,7 @@ body.start {
 /* 結果表示のスタイル指定 */
 .result{
     text-align: center;
-    color: #FF069C;
+    color: #F10A70;
     font-size: 100px;
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
@@ -97,13 +97,13 @@ body.start {
                  -3px 0 0 #1F1E1E,3px 0 0 #1F1E1E;
     /* 配置 */
     position: absolute;
-    top: 75%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 /* ランク一覧のスタイル指定 */
-.ranklist{
+/* .ranklist{
     margin: 1rem;
     text-align: center;
     color: #F7B71D;
@@ -113,16 +113,16 @@ body.start {
                  0px 2px 0 #1F1E1E,0px -2px 0 #1F1E1E,
                  -2px 0 0 #1F1E1E,2px 0 0 #1F1E1E;
     /* 配置 */
-    position: absolute;
+    /* position: absolute;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+}  */
 
 /* ランク表示のスタイル指定 */
 .rank{
     text-align: center;
-    color: #FF069C;
+    color: #F10A70;
     font-size: 150px;
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
@@ -138,7 +138,7 @@ body.start {
 /* ボタン群のスタイル指定 */
 .buttons{
     text-align: center;
-    color: #F7B71D;
+    color: #FDCD01;
     font-size: 40px;
     text-shadow: 2px 2px 0 #1F1E1E,-2px -2px 0 #1F1E1E,
                  -2px 2px 0 #1F1E1E,2px -2px 0 #1F1E1E,

@@ -170,9 +170,6 @@ stopButton.addEventListener('click', () => {
     }, 2500);
 });
 
-
-
-
 // 「すごろくに戻る／もう1回はじめる」ボタンが押されたとき
 sugorokuBotton.addEventListener('click', () => {
 
@@ -212,5 +209,7 @@ sugorokuBotton.addEventListener('click', () => {
      // タイトル（小）を表示
      targetElem.classList.remove('hide');
     
+    // 背景を変える
+     bodyElem.classList.add('start');
 });
 
