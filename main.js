@@ -11,7 +11,7 @@ const targetElem = document.getElementById('target'); // 目標タイム兼タ�
 const result = document.getElementById('result'); // 結果表示の要素
 const rankElem = document.getElementById('rank'); // ランク表示の要素
 const rankListElem = document.getElementById('ranklist'); // ランク一覧の要素
-const bodyElem = document.querySelector('body');
+// const bodyElem = document.querySelector('body');
 
 
 
@@ -64,7 +64,7 @@ tapButton.addEventListener('click', () => {
     targetElem.classList.remove('hide');
 
     // 背景を変える
-    bodyElem.classList.add('start');
+    // bodyElem.classList.add('start');
 });
 
 
@@ -166,7 +166,7 @@ stopButton.addEventListener('click', () => {
         // もう1回ボタンを表示する
         sugorokuBotton.classList.remove('hide');
         // 背景を変える
-        bodyElem.classList.remove('start');
+        // bodyElem.classList.remove('start');
     }, 2500);
 });
 
@@ -210,6 +210,6 @@ sugorokuBotton.addEventListener('click', () => {
      targetElem.classList.remove('hide');
     
     // 背景を変える
-     bodyElem.classList.add('start');
+    //  bodyElem.classList.add('start');
 });
 
