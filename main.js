@@ -1,5 +1,8 @@
 'use strict';
 
+import { SugorokuConnection } from './SugorokuConnection.js';
+
+
 // HTMLの要素を取得して変数に入れる
 const timeElem = document.getElementById('time'); // 時間表示の要素
 const tapButton = document.getElementById('tap'); // タップしてはじめるの要素
@@ -12,6 +15,11 @@ const result = document.getElementById('result'); // 結果表示の要素
 const rankElem = document.getElementById('rank'); // ランク表示の要素
 const rankListElem = document.getElementById('ranklist'); // ランク一覧の要素
 // const bodyElem = document.querySelector('body');
+
+// すごろくコネクションの召喚
+const sgcon = new SugorokuConnection();
+// ページ読み込み時のチェック処理を実行
+sgcon.checkSugorokuMode();
 
 
 
@@ -140,6 +148,15 @@ stopButton.addEventListener('click', () => {
     } else {
         rank = 'c';
     }
+    
+    // ランク情報を保持してすごろくモードであるかどうかで表示を変える
+    if (sgcon.isSugorokuMode) {
+        sgcon.setRankValue(rank);
+        sugorokuBotton.textContent = 'タップですごろくに戻る';
+    } else {
+        sugorokuBotton.textContent = 'もう1回はじめる';
+    }
+    
     // ランクを表示する
     rankElem.textContent = 'ランク' + rank.toUpperCase();
 
@@ -172,7 +189,13 @@ stopButton.addEventListener('click', () => {
 
 // 「すごろくに戻る／もう1回はじめる」ボタンが押されたとき
 sugorokuBotton.addEventListener('click', () => {
-
+    
+    // すごろくモードの場合はすごろくに戻る
+    if (sgcon.isSugorokuMode) {
+        sgcon.returnToSugoroku();
+        return;
+    }
+    
     // 「すごろくに戻る／もう1回はじめる」ボタンを非表示にする
     sugorokuBotton.classList.add('hide');
     
