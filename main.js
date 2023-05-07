@@ -13,14 +13,12 @@ const titleElem = document.getElementById('title'); // 目標タイム兼タイ�
 const targetElem = document.getElementById('target'); // 目標タイム兼タイトル（小）の要素
 const result = document.getElementById('result'); // 結果表示の要素
 const rankElem = document.getElementById('rank'); // ランク表示の要素
-const rankListElem = document.getElementById('ranklist'); // ランク一覧の要素
-// const bodyElem = document.querySelector('body');
+
 
 // すごろくコネクションの召喚
 const sgcon = new SugorokuConnection();
 // ページ読み込み時のチェック処理を実行
 sgcon.checkSugorokuMode();
-
 
 
 // 開始時間
@@ -46,11 +44,7 @@ const digitNum = 10;
 // });
 // 
 // 
-// ■要素にクラスをつける
-// 対象の要素.classList.add(つけるクラス名);
-// 
-// ■要素のクラスをはずす
-// 対象の要素.classList.remove(はずすクラス名);
+
 
 // タップしてはじめるボタンが押されたときの処理
 tapButton.addEventListener('click', () => {
@@ -70,9 +64,6 @@ tapButton.addEventListener('click', () => {
 
     // 目標兼タイトル（小）を表示する
     targetElem.classList.remove('hide');
-
-    // 背景を変える
-    // bodyElem.classList.add('start');
 });
 
 
@@ -112,7 +103,6 @@ startButton.addEventListener('click', () => {
     // 時間を表示する関数を実行
     displayTime();
 });
-
 
 
 // ストップボタンがクリックされたら時間を止める
@@ -158,7 +148,7 @@ stopButton.addEventListener('click', () => {
     }
     
     // ランクを表示する
-    rankElem.textContent = 'ランク' + rank.toUpperCase();
+    rankElem.textContent = rank.toUpperCase();
 
     // 結果表示の要素を表示
     result.classList.remove('hide');
@@ -176,14 +166,10 @@ stopButton.addEventListener('click', () => {
         timeElem.classList.add('hide');
         // 結果秒数を消す
         result.classList.add('hide');
-        // ランク一覧を表示する
-        // rankListElem.classList.remove('hide');
         // ランクを表示する
         rankElem.classList.remove('hide');
         // もう1回ボタンを表示する
         sugorokuBotton.classList.remove('hide');
-        // 背景を変える
-        // bodyElem.classList.remove('start');
     }, 2500);
 });
 
@@ -217,9 +203,6 @@ sugorokuBotton.addEventListener('click', () => {
     // ランク表示の要素を非表示
     rankElem.classList.add('hide');
     
-    // ランクリストを非表示
-    // rankListElem.classList.add('hide');
-    
     // タイトルを表示
     titleElem.classList.remove('hide');
     
@@ -231,8 +214,5 @@ sugorokuBotton.addEventListener('click', () => {
 
      // タイトル（小）を表示
      targetElem.classList.remove('hide');
-    
-    // 背景を変える
-    //  bodyElem.classList.add('start');
 });
 

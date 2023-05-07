@@ -17,11 +17,6 @@ body {
     width: 100vw;
 }
 
-/* 背景切り替え後 */
-/* body.start {
-    background-image:url("./img/image2.svg"), url("./img/manga1.jpg");
-} */
-
 
 /* 目標タイム兼タイトル（大）のスタイル指定 */
 .title{
@@ -35,9 +30,6 @@ body {
                  0px 3px 0 #1F1E1E,0px -3px 0 #1F1E1E,
                  -3px 0 0 #1F1E1E,3px 0 0 #1F1E1E;
 }
-
-
-
 
 
 /* 目標タイム兼タイトルをど真ん中に持ってくる */
@@ -102,28 +94,12 @@ body {
     transform: translate(-50%, -50%);
 }
 
-/* ランク一覧のスタイル指定 */
-/* .ranklist{
-    margin: 1rem;
-    text-align: center;
-    color: #F7B71D;
-    font-size: 40px;
-    text-shadow: 2px 2px 0 #1F1E1E,-2px -2px 0 #1F1E1E,
-                 -2px 2px 0 #1F1E1E,2px -2px 0 #1F1E1E,
-                 0px 2px 0 #1F1E1E,0px -2px 0 #1F1E1E,
-                 -2px 0 0 #1F1E1E,2px 0 0 #1F1E1E;
-    /* 配置 */
-    /* position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}  */
 
 /* ランク表示のスタイル指定 */
 .rank{
     text-align: center;
     color: #F10A70;
-    font-size: 150px;
+    font-size: 200px;
     text-shadow: 3px 3px 0 #1F1E1E,-3px -3px 0 #1F1E1E,
                  -3px 3px 0 #1F1E1E,3px -3px 0 #1F1E1E,
                  0px 3px 0 #1F1E1E,0px -3px 0 #1F1E1E,
